@@ -9,9 +9,9 @@ public class Node
     // Game object at the node location
     GameObject id;
     // Help calculate distances between and where tank has to go
-    public float xPos;
-    public float yPos;
-    public float zPos;
+    //public float xPos;
+    //public float yPos;
+    //public float zPos;
 
     public float f, g, h;
     // Store another node, where they came from
@@ -20,9 +20,9 @@ public class Node
     public Node(GameObject i)
     {
         id = i;
-        xPos = i.transform.position.x;
-        yPos = i.transform.position.y;
-        zPos = i.transform.position.z;
+        //xPos = i.transform.position.x;
+        //yPos = i.transform.position.y;
+        //zPos = i.transform.position.z;
         path = null;
     }
 
