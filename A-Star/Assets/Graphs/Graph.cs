@@ -41,7 +41,7 @@ public class Graph
         }
         return null;
     }
-    // A* Algorithm
+    // A* Algorithm - h = cost to goal, g = cost from start, f = total of start and goal; open/closed list
     public bool AStar(GameObject startId, GameObject endId)
     {
         Node start = FindNode(startId);
