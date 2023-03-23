@@ -142,18 +142,18 @@ public class FindPathAStar : MonoBehaviour
             {
                 open.Add(new PathMarker(neighbour, G, H, F, pathBlock, thisNode));
             }
-
-            // Pick the next node - determine which by lowest F value or random - use linq library for sorting, then by H
-            open = open.OrderBy(p => p.F).ThenBy(n => n.H).ToList<PathMarker>();
-            PathMarker pm = (PathMarker)open.ElementAt(0);
-
-            // Move marker from open to closed and change to close material
-            closed.Add(pm);
-            open.RemoveAt(0);
-            pm.marker.GetComponent<Renderer>().material = closedMaterial;
-
-            lastPos = pm;
         }
+
+        // Pick the next node - determine which by lowest F value or random - use linq library for sorting, then by H
+        open = open.OrderBy(p => p.F).ThenBy(n => n.H).ToList<PathMarker>();
+        PathMarker pm = (PathMarker)open.ElementAt(0);
+
+        // Move marker from open to closed and change to close material
+        closed.Add(pm);
+        open.RemoveAt(0);
+        pm.marker.GetComponent<Renderer>().material = closedMaterial;
+
+        lastPos = pm;
     }
 
     // Check if marker does exist as only want to update existing one
